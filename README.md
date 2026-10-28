@@ -1,4 +1,4 @@
-# Wind Desk
+# Wind Matrix
 
 A web app for a UK utility's day-ahead power desk. It answers two questions for every purchase decision
 made in January 2026:
@@ -276,7 +276,4 @@ published after gate closure and checks the decision output does not change.
 
 ---
 
-## Use of AI tools
 
-Claude (Anthropic) was used as an AI coding assistant on this project, for scaffolding, implementation,
-tests and documentation.
