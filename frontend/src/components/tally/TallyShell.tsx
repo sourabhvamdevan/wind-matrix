@@ -167,7 +167,7 @@ export function TallyShell({ children }: { children: ReactNode }) {
     <div className="t-app">
       <header className="t-master">
         <div className="t-brand">
-          Wind Desk <span className="t-edition">TERMINAL</span>
+          Wind Matrix <span className="t-edition">TERMINAL</span>
         </div>
         <button type="button" className="t-search" onClick={() => t.setDrawer({ kind: "goto" })}>
           🔍 Find views, delivery dates or settlement periods… <kbd>Alt+G</kbd>
@@ -194,7 +194,7 @@ export function TallyShell({ children }: { children: ReactNode }) {
 
       <div className="t-subbar">
         <nav className="t-crumbs" aria-label="Breadcrumb">
-          <button type="button" onClick={() => t.setView("brief")}>Wind Desk</button>
+          <button type="button" onClick={() => t.setView("brief")}>Wind Matrix</button>
           <span>›</span>
           <button type="button" onClick={() => t.cycleView(1)} title="H: change view">{viewLabel}</button>
           <span>›</span>

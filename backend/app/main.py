@@ -1,4 +1,4 @@
-"""HTTP API and static file host for the Wind Desk app."""
+"""HTTP API and static file host for the Wind Matrix app."""
 from __future__ import annotations
 
 import logging
@@ -19,7 +19,7 @@ from .store import store
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
 app = FastAPI(
-    title="Wind Desk API",
+    title="Wind Matrix API",
     description="Day-ahead wind forecast and accuracy analytics for GB, January 2026.",
     version="1.0.0",
 )

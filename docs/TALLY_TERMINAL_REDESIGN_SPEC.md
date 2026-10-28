@@ -1,12 +1,12 @@
-# Wind Desk — TallyPrime Enterprise Terminal Redesign Specification
+# Wind Matrix — TallyPrime Enterprise Terminal Redesign Specification
 > **Prompt & Implementation Blueprint for Claude**  
-> *Transforming Wind Desk from a static web dashboard into an ultra-dense, reactive, TallyPrime-inspired Energy Trading Terminal.*
+> *Transforming Wind Matrix from a static web dashboard into an ultra-dense, reactive, TallyPrime-inspired Energy Trading Terminal.*
 
 ---
 
 ## 1. Vision & Core Philosophy
 
-The goal is to overhaul Wind Desk into **"WindDesk Prime"**: a high-density, mission-critical energy trading and dispatch workstation inspired directly by **TallyPrime Gold / Silver**.
+The goal is to overhaul Wind Matrix into **"WindDesk Prime"**: a high-density, mission-critical energy trading and dispatch workstation inspired directly by **TallyPrime Gold / Silver**.
 
 ### What Makes It Feel "Live" (Not Static):
 1. **Zero-Latency Reactive Calculations:** As soon as the user adjusts a slider, gate closure time, risk threshold, or volume hedge input, all downstream numbers (imbalance exposure, bias-adjusted curves, expected cashout penalty, P10/P90 bands) update **instantly** with animated delta indicators (`+14.2 MWh ▲`, `-£2,450 ▼`).

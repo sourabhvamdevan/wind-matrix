@@ -1,4 +1,4 @@
-# Wind Desk — Complete Video Presentation Script
+# Wind Matrix — Complete Video Presentation Script
 > **Challenge:** REint Full Stack SWE Challenge v4  
 > **Total Length:** 10 Minutes Maximum (Split into Part 1: Client Pitch & Part 2: Tech Lead Review)  
 > **Format:** Screen Recording with Voiceover (Upload to YouTube as **Unlisted**)
@@ -8,7 +8,7 @@
 ## Pre-Recording Checklist & Environment Setup
 
 * **Display Resolution:** 1920×1080 or 1536×864.
-* **Browser Window (Tab 1):** `http://localhost:8000` (Wind Desk TallyPrime Terminal running via Docker).
+* **Browser Window (Tab 1):** `http://localhost:8000` (Wind Matrix TallyPrime Terminal running via Docker).
 * **Editor Window (VS Code):**
   * Pinned Tab 1: `docs/ARCHITECTURE.md` (Mermaid diagram ready).
   * Pinned Tab 2: `backend/app/analytics.py` (line ~210 `decision_frame`).
@@ -26,15 +26,15 @@
 ---
 
 ### [0:00 – 0:45] The Trading Problem & Value Proposition
-* **Screen:** Browser at `http://localhost:8000/#/brief/2026-01-16`. Show the live Wind Desk terminal shell.
+* **Screen:** Browser at `http://localhost:8000/#/brief/2026-01-16`. Show the live Wind Matrix terminal shell.
 * **Spoken Script:**
-  > *"Hello everyone. Today, I'm thrilled to present **Wind Desk**, the specialized decision workstation we developed for your wholesale power trading team.*
+  > *"Hello everyone. Today, I'm thrilled to present **Wind Matrix**, the specialized decision workstation we developed for your wholesale power trading team.*
   > 
   > *As an energy utility in the UK market, your core daily objective is simple yet high-stakes: you must procure enough wholesale power on day $D-1$ to meet tomorrow's consumer demand, subtracting whatever power your renewable wind portfolio generates.*
   > 
   > *However, wind is intermittent. If you rely blindly on a raw point forecast and the wind doesn't blow, you end up dangerously short—forced to buy balancing replacement power from National Grid at punitive cashout prices. If you over-buy, you spill power at distressed rates.*
   > 
-  > *Wind Desk solves this by transforming raw Elexon BMRS forecasts into risk-adjusted, actionable day-ahead purchase schedules."*
+  > *Wind Matrix solves this by transforming raw Elexon BMRS forecasts into risk-adjusted, actionable day-ahead purchase schedules."*
 
 ---
 
@@ -98,7 +98,7 @@
   > 
   > *As I move the slider, downstream financial metrics and P&L indicators update in real time.*
   > 
-  > *In summary, Wind Desk replaces guesswork with statistical rigor, directly serving your day-ahead buying obligations and protecting your utility’s bottom line. Thank you, and I’ll now transition to the technical architecture review."*
+  > *In summary, Wind Matrix replaces guesswork with statistical rigor, directly serving your day-ahead buying obligations and protecting your utility’s bottom line. Thank you, and I’ll now transition to the technical architecture review."*
 
 ---
 

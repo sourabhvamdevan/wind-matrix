@@ -22,11 +22,11 @@ export default function App() {
   if (meta.error) {
     return (
       <div className="t-boot t-neg" role="alert">
-        Couldn't reach the Wind Desk API ({meta.error}). Start the backend on port 8000, then reload.
+        Couldn't reach the Wind Matrix API ({meta.error}). Start the backend on port 8000, then reload.
       </div>
     );
   }
-  if (!meta.data) return <div className="t-boot">Loading Wind Desk terminal…</div>;
+  if (!meta.data) return <div className="t-boot">Loading Wind Matrix terminal…</div>;
   return (
     <TerminalProvider meta={meta.data}>
       <TallyShell>

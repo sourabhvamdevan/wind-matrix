@@ -1,5 +1,5 @@
-# Wind Desk — Realistic Staggered Calculation & Empty States Specification
-> **Prompt for Claude:** Transform Wind Desk from instantaneous static rendering into an authentic, heavy-computation financial/trading workstation with progressive loading, calculation telemetry, and initial empty-state layouts.
+# Wind Matrix — Realistic Staggered Calculation & Empty States Specification
+> **Prompt for Claude:** Transform Wind Matrix from instantaneous static rendering into an authentic, heavy-computation financial/trading workstation with progressive loading, calculation telemetry, and initial empty-state layouts.
 
 ---
 
