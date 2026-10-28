@@ -535,6 +535,4 @@ docker compose up --build
 - A successful historical backtest does not guarantee future forecast performance or trading profitability.
 - The app is an analytical decision-support tool and does not execute trades.
 
-## License
 
-Add your chosen license and copyright information here.
