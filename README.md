@@ -1,4 +1,3 @@
-
 # Wind Matrix
 
 A web app for a UK utility's day-ahead power desk. It answers two questions for every purchase decision made in January 2026:
@@ -135,6 +134,30 @@ flowchart TB
     VIEWS --> LEDGER
     VIEWS --> MATRIX
     VIEWS --> SANDBOX
+
+    classDef ext fill:#1f6feb,stroke:#0a3069,color:#ffffff,stroke-width:2px
+    classDef ingest fill:#8957e5,stroke:#3b1e7a,color:#ffffff,stroke-width:2px
+    classDef store fill:#bf8700,stroke:#5c4400,color:#ffffff,stroke-width:2px
+    classDef engine fill:#d1242f,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef api fill:#e36209,stroke:#7a3300,color:#ffffff,stroke-width:2px
+    classDef front fill:#1a7f37,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef view fill:#0e8a8a,stroke:#054545,color:#ffffff,stroke-width:2px
+    classDef good fill:#2da44e,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef bad fill:#cf222e,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef decide fill:#f5c518,stroke:#7a5c00,color:#1b1f24,stroke-width:2px
+    classDef dark fill:#24292f,stroke:#000000,color:#ffffff,stroke-width:2px
+    class E,F,W ext
+    class FETCH,CLIENT ingest
+    class CSV,STORE store
+    class ANALYTICS engine
+    class API api
+    class APP,STATE,PIPE,CALC,VIEWS front
+    class BRIEF,LEDGER,MATRIX,SANDBOX view
+    style Sources fill:#1f6feb1f,stroke:#1f6feb,stroke-width:2px,stroke-dasharray:4 3
+    style Ingestion fill:#8957e51f,stroke:#8957e5,stroke-width:2px,stroke-dasharray:4 3
+    style APIBackend fill:#d1242f1f,stroke:#d1242f,stroke-width:2px,stroke-dasharray:4 3
+    style UI fill:#1a7f371f,stroke:#1a7f37,stroke-width:2px,stroke-dasharray:4 3
+    style Results fill:#0e8a8a1f,stroke:#0e8a8a,stroke-width:2px,stroke-dasharray:4 3
 ```
 
 ### 2. Data Ingestion Workflow
@@ -150,6 +173,24 @@ flowchart TD
     G -->|Yes| H["Write CSV snapshot"]
     H --> I([Snapshot ready])
     G -->|No| J([Report ingestion failure])
+
+    classDef ext fill:#1f6feb,stroke:#0a3069,color:#ffffff,stroke-width:2px
+    classDef ingest fill:#8957e5,stroke:#3b1e7a,color:#ffffff,stroke-width:2px
+    classDef store fill:#bf8700,stroke:#5c4400,color:#ffffff,stroke-width:2px
+    classDef engine fill:#d1242f,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef api fill:#e36209,stroke:#7a3300,color:#ffffff,stroke-width:2px
+    classDef front fill:#1a7f37,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef view fill:#0e8a8a,stroke:#054545,color:#ffffff,stroke-width:2px
+    classDef good fill:#2da44e,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef bad fill:#cf222e,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef decide fill:#f5c518,stroke:#7a5c00,color:#1b1f24,stroke-width:2px
+    classDef dark fill:#24292f,stroke:#000000,color:#ffffff,stroke-width:2px
+    class A,I good
+    class J bad
+    class G decide
+    class B,C ext
+    class D,E,F ingest
+    class H store
 ```
 
 - **FUELHH** provides half-hourly metered generation filtered to `fuelType = WIND`.
@@ -171,6 +212,23 @@ flowchart TD
     G --> H["Estimate shortfall, surplus and imbalance cost"]
     H --> I["Display forecast, range, hedge and ledger"]
     I --> J([Decision results ready])
+
+    classDef ext fill:#1f6feb,stroke:#0a3069,color:#ffffff,stroke-width:2px
+    classDef ingest fill:#8957e5,stroke:#3b1e7a,color:#ffffff,stroke-width:2px
+    classDef store fill:#bf8700,stroke:#5c4400,color:#ffffff,stroke-width:2px
+    classDef engine fill:#d1242f,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef api fill:#e36209,stroke:#7a3300,color:#ffffff,stroke-width:2px
+    classDef front fill:#1a7f37,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef view fill:#0e8a8a,stroke:#054545,color:#ffffff,stroke-width:2px
+    classDef good fill:#2da44e,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef bad fill:#cf222e,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef decide fill:#f5c518,stroke:#7a5c00,color:#1b1f24,stroke-width:2px
+    classDef dark fill:#24292f,stroke:#000000,color:#ffffff,stroke-width:2px
+    class A,J good
+    class B,C ext
+    class D,E ingest
+    class F,G,H api
+    class I view
 ```
 
 **Core calculations**
@@ -196,6 +254,26 @@ flowchart TD
     G --> H{"Does the decision output change?"}
     H -->|No| I([Pass: no lookahead leakage detected])
     H -->|Yes| J([Fail: investigate data leakage])
+
+    classDef ext fill:#1f6feb,stroke:#0a3069,color:#ffffff,stroke-width:2px
+    classDef ingest fill:#8957e5,stroke:#3b1e7a,color:#ffffff,stroke-width:2px
+    classDef store fill:#bf8700,stroke:#5c4400,color:#ffffff,stroke-width:2px
+    classDef engine fill:#d1242f,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef api fill:#e36209,stroke:#7a3300,color:#ffffff,stroke-width:2px
+    classDef front fill:#1a7f37,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef view fill:#0e8a8a,stroke:#054545,color:#ffffff,stroke-width:2px
+    classDef good fill:#2da44e,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef bad fill:#cf222e,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef decide fill:#f5c518,stroke:#7a5c00,color:#1b1f24,stroke-width:2px
+    classDef dark fill:#24292f,stroke:#000000,color:#ffffff,stroke-width:2px
+    class A good
+    class B,C ext
+    class D,E ingest
+    class F api
+    class G engine
+    class H decide
+    class I good
+    class J bad
 ```
 
 The backend no-lookahead regression test changes data published after gate closure and verifies that the decision output does not change.
@@ -218,6 +296,25 @@ flowchart TD
     H --> J
     I --> J
     J --> K["Render Accuracy Matrix and backtest"]
+
+    classDef ext fill:#1f6feb,stroke:#0a3069,color:#ffffff,stroke-width:2px
+    classDef ingest fill:#8957e5,stroke:#3b1e7a,color:#ffffff,stroke-width:2px
+    classDef store fill:#bf8700,stroke:#5c4400,color:#ffffff,stroke-width:2px
+    classDef engine fill:#d1242f,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef api fill:#e36209,stroke:#7a3300,color:#ffffff,stroke-width:2px
+    classDef front fill:#1a7f37,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef view fill:#0e8a8a,stroke:#054545,color:#ffffff,stroke-width:2px
+    classDef good fill:#2da44e,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef bad fill:#cf222e,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef decide fill:#f5c518,stroke:#7a5c00,color:#1b1f24,stroke-width:2px
+    classDef dark fill:#24292f,stroke:#000000,color:#ffffff,stroke-width:2px
+    class A good
+    class B,C,D ext
+    class E ingest
+    class F,G,H api
+    class I store
+    class J engine
+    class K view
 ```
 
 The analysis includes error magnitude and direction, horizon performance, uncertainty-band coverage, daily energy misses, and strategy comparisons under configurable price assumptions.
@@ -236,6 +333,24 @@ flowchart TD
     G --> I["Display P&L, transactions and results"]
     H --> I
     I --> J([Scenario analysis complete])
+
+    classDef ext fill:#1f6feb,stroke:#0a3069,color:#ffffff,stroke-width:2px
+    classDef ingest fill:#8957e5,stroke:#3b1e7a,color:#ffffff,stroke-width:2px
+    classDef store fill:#bf8700,stroke:#5c4400,color:#ffffff,stroke-width:2px
+    classDef engine fill:#d1242f,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef api fill:#e36209,stroke:#7a3300,color:#ffffff,stroke-width:2px
+    classDef front fill:#1a7f37,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef view fill:#0e8a8a,stroke:#054545,color:#ffffff,stroke-width:2px
+    classDef good fill:#2da44e,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef bad fill:#cf222e,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef decide fill:#f5c518,stroke:#7a5c00,color:#1b1f24,stroke-width:2px
+    classDef dark fill:#24292f,stroke:#000000,color:#ffffff,stroke-width:2px
+    class A good
+    class B,C,D ext
+    class E,F api
+    class G,H ingest
+    class I view
+    class J good
 ```
 
 Scenario results are simulations, not executed electricity trades. Demo jitter is simulated data, not a live forecast update.
@@ -269,6 +384,27 @@ flowchart TB
     HEROKU --> IMAGE
 
     LOCAL["Docker Compose"] --> CONTAINER["Combined local application"]
+
+    classDef ext fill:#1f6feb,stroke:#0a3069,color:#ffffff,stroke-width:2px
+    classDef ingest fill:#8957e5,stroke:#3b1e7a,color:#ffffff,stroke-width:2px
+    classDef store fill:#bf8700,stroke:#5c4400,color:#ffffff,stroke-width:2px
+    classDef engine fill:#d1242f,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef api fill:#e36209,stroke:#7a3300,color:#ffffff,stroke-width:2px
+    classDef front fill:#1a7f37,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef view fill:#0e8a8a,stroke:#054545,color:#ffffff,stroke-width:2px
+    classDef good fill:#2da44e,stroke:#0b3d1a,color:#ffffff,stroke-width:2px
+    classDef bad fill:#cf222e,stroke:#6e1018,color:#ffffff,stroke-width:2px
+    classDef decide fill:#f5c518,stroke:#7a5c00,color:#1b1f24,stroke-width:2px
+    classDef dark fill:#24292f,stroke:#000000,color:#ffffff,stroke-width:2px
+    class DEV,GIT ext
+    class CI ingest
+    class VERCEL,HEROKU,LOCAL dark
+    class STATIC,APP front
+    class FUNCTION,IMAGE api
+    class DATA1,DATA2 store
+    class CONTAINER view
+    style V fill:#24292f1f,stroke:#24292f,stroke-width:2px,stroke-dasharray:4 3
+    style H fill:#8957e51f,stroke:#8957e5,stroke-width:2px,stroke-dasharray:4 3
 ```
 
 - **Docker:** runs the application locally.
@@ -534,5 +670,3 @@ docker compose up --build
 - The bias adjustment and uncertainty range depend on the available historical error sample.
 - A successful historical backtest does not guarantee future forecast performance or trading profitability.
 - The app is an analytical decision-support tool and does not execute trades.
-
-
